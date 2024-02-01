@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+
+<body>
+    <h1>Playliste</h1>
+    <ul></ul>
+    <script>
+        const music = ["Rangerover", "I Miss That", "The Blonde", "Sugar", "Stereo Colour Cloud", "Seaforth"]
+        const ul = document.querySelector("ul");
+        music.forEach(bygListe);
+        function bygListe(element) {
+            console.log(element)
+            ul.innerHTML += "<li>" + element + "</li>";
+        }
+
+    </script>
+</body>
+
+</html>
