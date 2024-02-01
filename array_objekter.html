@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array af objekt</title>
-    <style></style>
 </head>
 
 <body>
@@ -15,32 +14,47 @@
         <article>
             <h2></h2>
             <p></p>
+            <p class="dannelse"></p>
             <img src="" alt="">
         </article>
     </template>
+
+    <style>
+        img {
+            width: 500px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        article,
+        h1 {
+            text-align: center;
+        }
+    </style>
+
 
 
     <script>
         const bands = [{
             navn: "King Krule",
             dannet: "2010",
-            albums: ["Sidste sommer", "Næste jul", 5],
+            albums: ["Space Heavy", "The OOZ", 5],
             medlemmer: ["Archy Marshall"],
             img: "king.jpg"
         },
         {
             navn: "Kings of convenience",
             dannet: "2001",
-            albums: ["Sidste sommer", "Næste jul", 4],
-            medlemmer: ["Erlend Øye", "Eirik Glambek Bøe"],
+            albums: ["Riot On An Empty Street", "Quiet is the new loud", 4],
+            medlemmer: [" Erlend Øye ", " Eirik Glambek Bøe "],
             img: "convenience.jpeg"
         },
         {
-            navn: "5 seconds of summer",
-            dannet: "2012",
-            albums: ["Sidste sommer", "Næste jul", 3],
-            medlemmer: ["PeterT", "JytteT", "NielsT"],
-            img: "second-sommer.jpg"
+            navn: "Crayon",
+            dannet: "2016",
+            albums: ["After the Tone", "Hundred Fifty Roses", 3],
+            medlemmer: [" Dune ", " Crayon "],
+            img: "dune-x-crayon.jpg"
         }
         ];
 
@@ -53,6 +67,7 @@
             console.log("band", band);
             klon.querySelector("p").textContent += "medlemmer: " + band.medlemmer;
             klon.querySelector("h2").textContent = "Navn : " + band.navn;
+            klon.querySelector("p.dannelse").textContent += " dannet: " + band.dannet;
             klon.querySelector("img").src = band.img;
             klon.querySelector("img").alt = band.navn;
 
