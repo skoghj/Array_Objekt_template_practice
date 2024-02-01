@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array af objekt</title>
+    <style></style>
+</head>
+
+<body>
+    <h1>Mit yndlingsBand</h1>
+    <main></main>
+    <template>
+        <article>
+            <h2></h2>
+            <p></p>
+            <img src="" alt="">
+        </article>
+    </template>
+
+
+    <script>
+        const bands = [{
+            navn: "King Krule",
+            dannet: "2010",
+            albums: ["Sidste sommer", "Næste jul", 5],
+            medlemmer: ["Archy Marshall"],
+            img: "king.jpg"
+        },
+        {
+            navn: "Kings of convenience",
+            dannet: "2001",
+            albums: ["Sidste sommer", "Næste jul", 4],
+            medlemmer: ["Erlend Øye", "Eirik Glambek Bøe"],
+            img: "convenience.jpeg"
+        },
+        {
+            navn: "5 seconds of summer",
+            dannet: "2012",
+            albums: ["Sidste sommer", "Næste jul", 3],
+            medlemmer: ["PeterT", "JytteT", "NielsT"],
+            img: "second-sommer.jpg"
+        }
+        ];
+
+        const skabelon = document.querySelector("template").content;
+        bands.forEach(visBands);
+
+        function visBands(band) {
+            const klon = skabelon.cloneNode(true);
+            console.log("klon", klon);
+            console.log("band", band);
+            klon.querySelector("p").textContent += "medlemmer: " + band.medlemmer;
+            klon.querySelector("h2").textContent = "Navn : " + band.navn;
+            klon.querySelector("img").src = band.img;
+            klon.querySelector("img").alt = band.navn;
+
+            const beholder = document.querySelector("main");
+            beholder.appendChild(klon);
+
+
+        }
+
+
+        /*const p = document.querySelector("p");
+        const h2 = document.querySelector("h2");
+        const img = document.querySelector("img");
+
+        h2.textContent = "Mit yndlingsband er : " + badns.navn;
+        p.textContent += "medlemmer" + bands.medlemmer;
+        img.src = bands.img;
+        img.alt = "profilbillede"
+
+
+
+        /*
+        const p = document.querySelector("p");
+        const h2 = document.querySelector("h2");
+        const img = document.querySelector("img");
+
+        h2.textContent = "Mit yndlingsband er : " + yndlingsBand.navn;
+        p.textContent += "medlemmer" + yndlingsBand.medlemmer;
+        img.src = yndlingsBand.img;
+        img.alt = "profilbillede"*/
+
+        /*
+        h2.textContent = "Mit yndlingsband er : " + yndlingsBand.navn;
+        p.textContent += ". Det er dannet i: " + yndlingsBand.dannet;
+        p.textContent += ". Forsanger er :" + yndlingsBand.medlemmer[0] + " og " + yndlingsBand.medlemmer[2];
+        p.textContent += ". Bassist er :" + yndlingsBand.medlemmer[1];*/
+    </script>
+</body>
+
+</html>

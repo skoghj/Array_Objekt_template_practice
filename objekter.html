@@ -8,11 +8,36 @@
 </head>
 
 <body>
-    <h1>Playliste</h1>
-    <ul></ul>
-    <script>
-        const
+    <h1>Mit yndlingsBand</h1>
+    <article>
+        <h2></h2>
+        <p></p>
+        <img src="" alt="">
+    </article>
 
+
+    <script>
+        const yndlingsBand = {
+            navn: "5 seconds of summer",
+            dannet: "2010",
+            albums: ["Sidste sommer", "Næste jul", 5],
+            medlemmer: ["Peter", "Jytte", "Niels"],
+            img: "second-sommer.jpg"
+        }
+        const p = document.querySelector("p");
+        const h2 = document.querySelector("h2");
+        const img = document.querySelector("img");
+
+        h2.textContent = "Mit yndlingsband er : " + yndlingsBand.navn;
+        p.textContent += "medlemmer" + yndlingsBand.medlemmer;
+        img.src = yndlingsBand.img;
+        img.alt = "profilbillede"
+
+        /*
+        h2.textContent = "Mit yndlingsband er : " + yndlingsBand.navn;
+        p.textContent += ". Det er dannet i: " + yndlingsBand.dannet;
+        p.textContent += ". Forsanger er :" + yndlingsBand.medlemmer[0] + " og " + yndlingsBand.medlemmer[2];
+        p.textContent += ". Bassist er :" + yndlingsBand.medlemmer[1];*/
     </script>
 </body>
 
